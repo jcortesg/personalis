@@ -6,14 +6,11 @@ class User
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable , :omniauthable
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
-
-  validates_presence_of :email
-  validates_presence_of :encrypted_password
   
   ## Recoverable
   field :reset_password_token,   :type => String
@@ -29,6 +26,22 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
+  ## Information TW
+
+  field :provider , :type => String
+  field :uid , :type => String
+  field :username , :type => String
+  field :image , :type => String
+  field :password , :type => String
+  field :location , :type => String
+  field :description , :type => String
+  field :followers, :type => Integer
+  field :name , :type => String
+  field :friends , :type => Integer
+  field :token , :type => String
+  field :secret , :type => String
+
+
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
@@ -43,8 +56,46 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   # run 'rake db:mongoid:create_indexes' to create indexes
-  index({ email: 1 }, { unique: true, background: true })
+  
   field :name, :type => String
-  validates_presence_of :name
+  
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+
+
+  def self.new_with_session(params, session)
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
+
+  end
+
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.username = auth.info.nickname
+      user.email = auth.info.mail
+      user.image = auth.info.image
+      user.password = Devise.friendly_token[0,20]
+      user.description = auth.info.description
+      user.location = auth.info.location
+      user.followers = auth.extra.raw_info.followers_count.to_i
+      user.name = auth.info.name
+      user.friends = auth.extra.raw_info.friends_count.to_i
+      user.token = auth.credentials.token
+      user.secret = auth.credentials.secret
+    end
+
+  end
+
+def email_required?
+  super && provider.blank?
+end
+
 end
