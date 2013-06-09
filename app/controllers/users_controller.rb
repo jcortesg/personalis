@@ -18,17 +18,11 @@ class UsersController < ApplicationController
     category = Category.all
     array = []
     rankin = []
-    category.each do |cat|
+    @user.categories.each do |cat|
       array << cat.name
-      rankin << cat.raking
-      case cat.name
-      when 'musica'
-      when 'deportes'
-      when 'tecnologia'
-      when 'desarrollo'
-      when 'ciencia'
-      end
     end
+    
+
     @category = array
     @rankin = rankin
   end

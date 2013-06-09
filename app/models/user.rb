@@ -45,6 +45,7 @@ class User
 
   has_many :categories
   has_many :campaigns
+  embeds_many :trents
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time

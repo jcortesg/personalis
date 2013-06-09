@@ -19,6 +19,10 @@
     <%= f.label :value %><br />
     <%= f.number_field :value %>
   </div>
+  <div class="field">
+    <%= collection_select(:category, :category_id, Category.all, :id, :name, {:prompt => false}) %>
+
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
