@@ -13,7 +13,7 @@ Personalis::Application.routes.draw do
   
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'users#profile'
   end
   root :to => "home#index"
   
