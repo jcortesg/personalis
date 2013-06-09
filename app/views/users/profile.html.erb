@@ -49,11 +49,37 @@ $(function () {
     });
     
 </script>
-<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div class="contAzul">
+  <div class="container">
+    <div class="span12">
+      <figure id="contImg">
+        <%=image_tag current_user.image, :class => "img-circle", :width => "230" %>
+      </figure>
+      <div class="contDatos">
+        <h3><%= current_user.name %></h3>
+        <p id="location"><%= current_user. location %></p>
+        <p id="desc"><%= current_user.description %></p>
+        <div class="row">
+          <div class="span2">
+            <h5>
+              Siguiendo
+            </h5>
+            <p><%= current_user.friends %></p>
+          </div>
+          <div class="span2">
+            <h5>
+              Seguidores
+            </h5>
+            <p><%= current_user.followers %></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="contServ">
+  <div class="container">
+    <div id="container"></div>
+  </div>
+</div>
 
-<h3><%=image_tag current_user.image %></h3>
-<h3><%= current_user.name %></h3>
-<h3><%= current_user.description %></h3>
-<h3><%= current_user.location %></h3>
-<h3><%= current_user.followers %></h3>
-<h3><%= current_user.friends %></h3>

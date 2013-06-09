@@ -1,0 +1,31 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#contImg{
+  width: 250px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+.contDatos{
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  font-weight: normal;
+  width: 680px;
+}
+h3{
+  margin: 5px 0 0;
+}
+p{
+  font-size: 1.6em;
+}
+#location{
+  font-size: 1em;
+  margin: 0;
+}
+#desc{
+  font-size: 1.2em;
+  margin: 15px 0 0;
+}
