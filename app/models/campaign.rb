@@ -1,7 +1,7 @@
 class Campaign
   include Mongoid::Document
   field :name, type: String
-  field :content, type: String
+  field :description, type: String
 
-  belongs_to :user
+  embeds_many :categories
 end
