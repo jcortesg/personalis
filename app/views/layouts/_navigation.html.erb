@@ -1,6 +1,5 @@
-<div class="navbar navbar-inverse navbar-static-top">
+<div class="navbar navbar-static-top">
   <div class="navbar-inner">
-    <%= link_to "Personalis", root_path, :class => 'brand' %>
     <% if user_signed_in? %>
     <ul class="nav">
       <li>
@@ -18,7 +17,8 @@
       </li>
     <% else %>
       <li>
-        <%= link_to 'Login',  user_omniauth_authorize_path(:twitter) %>
+        <i class="icon-login"></i>
+        <%= link_to 'Login',  user_omniauth_authorize_path(:twitter), :class => 'login-btn'%>
       </li>
     <% end %>
     <% if user_signed_in? %>

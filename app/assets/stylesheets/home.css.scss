@@ -1,3 +1,101 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-inner{
+  -webkit-box-shadow: none !important;
+  box-shadow: none;
+  background: #fff;
+  height: 60px;
+}
+ul.nav{
+  height: 60px;
+}
+.icon-login{
+  background: url(/assets/flechaslogin-personalis.jpg) no-repeat;
+}
+.nav>li>a{
+  display: inline-block;
+}
+.navbar .nav>li>a{
+  padding-left: 0; 
+  padding-right: 60px; 
+  height: 38px;
+  line-height: 36px;
+}
+.contAzul{
+  height: 200px;
+  background: rgb(0, 158,226);
+}
+.container{
+  position: relative;
+}
+#logo{
+  background: url(/assets/logoweb-personalis.png) no-repeat;
+  height: 255px;
+  width: 300px;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  span{
+    display: none;
+  }
+}
+#desc{
+  display: inline-block;
+  vertical-align: top;
+  color: #fff; 
+  font-size: 1.2em;
+  width: 480px;
+  margin: 70px 0 0 150px;
+}
+.btn-custom{
+  background: rgb(232,78,27);
+  color: #fff;
+  font-weight: 200;
+  position: absolute;
+  top: 180px;
+  right: 15px;
+  padding: 8px 50px;
+}
+#pajaro{
+  background: url(/assets/iconotwitterblanco-personalis.png) no-repeat;
+  height: 52px;
+  width: 52px;
+  position: absolute;
+  top: 175px;
+  right: 245px;
+  z-index: 1;
+}
+#contServ{
+  border-top: 5px solid rgb(0, 158,226);
+  margin-top: 90px;
+  padding-top: 50px;
+  h4{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: rgb(99,99,92);
+  }
+  p{
+    color: rgb(99,99,92);
+  }
+}
+.icon-chart{
+  background: url(/assets/iconoestadisticas-personalis.png) no-repeat;
+  width: 100%;
+  height: 60px;
+  
+}
+.icon-datos{
+  background: url(/assets/iconodato-personalis.png) no-repeat;
+  width: 100%;
+  height: 60px;
+  
+}
+.icon-usu{
+  background: url(/assets/iconoseguidores-personalis.png) no-repeat;
+  width: 100%;
+  height: 60px;
+  
+}

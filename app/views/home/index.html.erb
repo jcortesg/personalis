@@ -1,8 +1,62 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-    <% if user_signed_in? %>
-        <%= @feed  %>    
-    <p>User: <%=link_to user.name, user %></p>
-  <% end %>
-<% end %>
-<%= link_to "Comienza ya!", user_omniauth_authorize_path(:twitter) , :class => "btn btn-large btn-primary" %>
+<div class="contAzul">
+  <div class="container">
+    <div class="span12">
+      <h3 id="logo"><span>Personalis</span></h3>
+      <p id="desc">Medidor de perfiles en twitter que genera segmentacion de mercado para generar campañas</p>
+      <% @users.each do |user| %>
+        <% if user_signed_in? %>
+          <%= @feed  %>    
+          <p>User: <%=link_to user.name, user %></p>
+        <% end %>
+      <% end %>
+      <span id="pajaro"></span>
+      <%= link_to "Ingresa con Twitter", user_omniauth_authorize_path(:twitter) , :class => "btn btn-large btn-custom" %>
+    </div>
+  </div>
+</div>
+<div id="contServ">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <div class="row">
+          <div class="span1">
+            <i class="icon-chart"></i>
+          </div>
+          <div class="span5">
+            <h4>
+              Estadisticas
+            </h4>
+            <p>Medidor de perfiles en twitter que genera una segmentación de mercadeo para sacar clientes potenciales<p>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="row">
+          <div class="span1">
+            <i class="icon-datos"></i>
+          </div>
+          <div class="span5">
+            <h4>
+              Datos de Perfil
+            </h4>
+            <p>Medidor de perfiles en twitter que genera una segmentación de mercadeo para sacar clientes potenciales<p>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="row">
+          <div class="span1">
+            <i class="icon-usu"></i>
+          </div>
+          <div class="span5">
+            <h4>
+              Seguidores
+            </h4>
+            <p>Medidor de perfiles en twitter que genera una segmentación de mercadeo para sacar clientes potenciales<p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
