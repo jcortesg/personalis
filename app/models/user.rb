@@ -41,7 +41,9 @@ class User
   field :token , :type => String
   field :secret , :type => String
 
+  ##Relations
 
+  has_many :categories
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time

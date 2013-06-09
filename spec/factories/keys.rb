@@ -1,8 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :campaign do
+  factory :key do
     name "MyString"
-    description "MyString"
   end
 end

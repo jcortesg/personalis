@@ -1,8 +1,6 @@
 class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
-  before_filter :authenticate_user!
-
   def index
     @campaigns = Campaign.all
 
