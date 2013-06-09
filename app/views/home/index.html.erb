@@ -1,5 +1,7 @@
 <h3>Home</h3>
 <% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+  <% if user_signed_in? %>
+    <p>User: <%=link_to user.name, user %></p>
+  <% end %>
 <% end %>
 <%= link_to "Comienza ya!", user_omniauth_authorize_path(:twitter) , :class => "btn btn-large btn-primary" %>
