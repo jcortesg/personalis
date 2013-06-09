@@ -251,4 +251,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   thin (>= 1.5.0)
   tweetstream
+  twitter
   uglifier (>= 1.0.3)

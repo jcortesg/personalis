@@ -5,6 +5,19 @@ class Topsy
 
   class << self
 
+  def timeline
+    @count = 1
+    begin
+       uri = URI.parse("http://api.oula.co/twitter/timeline?screen_name=jhon_ecg&count="+@count.to_s)
+       response = Net::HTTP.get_response(uri)
+       parsed_json = ActiveSupport::JSON.decode(response.body)
+       histogram = parsed_json['twitter']
+    rescue Exception => e
+      puts "Algo salió mal obteniendo el histograma del hashtag... #{e.message.to_s}"
+    end
+  end
+
+
     def hashtag_histogram(hashtag)
       begin
         uri = URI.parse("http://otter.topsy.com/searchhistogram.json?q="+hashtag+"&count_method=citation&apikey="+API_KEY)
@@ -65,7 +78,7 @@ class Topsy
         uri = URI.parse("http://otter.topsy.com/search.json?q="+URI.encode(phrase).to_s+"&type=tweet&apikey="+API_KEY)
         response = Net::HTTP.get_response(uri)
         parsed_json = ActiveSupport::JSON.decode(response.body)
-        tweets =  parsed_json['response']['list'].collect {|cm| cm}
+        tweets =  parsed_json['list'].collect {|cm| cm}
       rescue Exception => e
         puts "Algo salió mal obteniendo los expertos del hashtag... #{e.message.to_s}"
       end
