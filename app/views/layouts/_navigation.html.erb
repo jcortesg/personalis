@@ -1,6 +1,16 @@
 <div class="navbar navbar-inverse navbar-static-top">
   <div class="navbar-inner">
     <%= link_to "Personalis", root_path, :class => 'brand' %>
+    <% if user_signed_in? %>
+    <ul class="nav">
+      <li>
+        <%= link_to 'Perfil', root_path %>
+      </li>
+      <li>
+        <%= link_to 'Crear campaña', campaigns_path %>
+      </li>
+    </ul>
+    <% end %>
     <ul class="nav pull-right">
     <% if user_signed_in? %>
       <li>

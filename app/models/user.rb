@@ -62,6 +62,8 @@ class User
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
 
 
+  has_many :campaigns
+
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|
