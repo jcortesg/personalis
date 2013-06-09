@@ -45,7 +45,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(params[:campaign])
 
     respond_to do |format|
-      if @campaign.save
+      if current_user.campaigns << @campaign
         format.html { redirect_to campaign_user_path(@campaign), notice: 'Campaign was successfully created.' }
         format.json { render json: @campaign, status: :created, location: @campaign }
       else
@@ -91,7 +91,7 @@ class CampaignsController < ApplicationController
   def update_user
     @campaign = Campaign.find(params[:campaign_id])
     @user = User.find(params[:user])
-    @user.campaigns << @campaign
+    @campaign.update_attributes(influenciador: @user.id )
     respond_to do |format|
       format.html { redirect_to @campaign }
       format.json { head :no_content }

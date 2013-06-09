@@ -44,6 +44,7 @@ class User
   ##Relations
 
   has_many :categories
+  has_many :campaigns
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
@@ -64,7 +65,6 @@ class User
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
 
 
-  has_many :campaigns
 
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]

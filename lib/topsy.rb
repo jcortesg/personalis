@@ -6,7 +6,7 @@ class Topsy
   class << self
 
   def timeline
-    @count = 1
+    @count = 100
     begin
        uri = URI.parse("http://api.oula.co/twitter/timeline?screen_name=jhon_ecg&count="+@count.to_s)
        response = Net::HTTP.get_response(uri)
