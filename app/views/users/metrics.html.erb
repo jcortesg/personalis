@@ -1,14 +1,1 @@
-<script type="text/javascript">
-alert('hola')
-$.ajax({
-  url: "http://api.oula.co/twitter/timeline?screen_name=jhon_ecg&count=1",
-  type: 'GET',
-  success: function( data ){
-    console.log( 'data', data )
-  },
-  error: function(){
-    console.log( 'error' )
-  }
-})
-</script>
-
+<%= debug  @j %>

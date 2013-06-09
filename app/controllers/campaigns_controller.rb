@@ -1,3 +1,5 @@
+require 'topsy'
+
 class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
@@ -14,7 +16,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1.json
   def show
     @campaign = Campaign.find(params[:id])
-
+    @hastag = Topsy.phrase_tweets('hola')
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @campaign }
