@@ -4,5 +4,6 @@ class Subcategory
   field :raking, type: String
 
   embedded_in :categoty
+  
 
 end

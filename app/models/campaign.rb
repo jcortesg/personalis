@@ -3,5 +3,5 @@ class Campaign
   field :name, type: String
   field :description, type: String
 
-  embeds_many :categories
+  has_many :categories
 end

@@ -102,4 +102,8 @@ def email_required?
   super && provider.blank?
 end
 
+def metric
+  
+end
+
 end

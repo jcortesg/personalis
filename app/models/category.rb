@@ -4,6 +4,7 @@ class Category
   field :raking, type: String
 
   belongs_to :user
+  belongs_to :campaigns
   embeds_many :subcategories
 
   accepts_nested_attributes_for :subcategories

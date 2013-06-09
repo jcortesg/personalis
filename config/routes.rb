@@ -26,5 +26,12 @@ Personalis::Application.routes.draw do
   
   root :to => "home#index"
   
-  resources :users
+
+
+  resources :users do
+    collection do
+        get 'metrics'
+    end
+  
+  end
 end
