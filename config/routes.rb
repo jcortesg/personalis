@@ -7,7 +7,10 @@ Personalis::Application.routes.draw do
 
   #ROUTES CAMPINGS
 
-  resources :campaigns
+  resources :campaigns do
+      get 'user'
+      post 'update_user'
+  end
 
   
   #ROUTES KIES

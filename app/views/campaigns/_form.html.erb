@@ -22,7 +22,8 @@
   </div>
   <div class="field">
     <label>categoria </label><br />
-    <input type="text" name="categoria">
+    
+<%= collection_select(:perk, :category_id, Category.all, :id, :name, {:prompt => false}) %>
   </div>
   <div class="field">
     <%= f.label :tweet %><br />

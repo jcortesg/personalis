@@ -46,7 +46,7 @@ class CampaignsController < ApplicationController
 
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to @campaign, notice: 'Campaign was successfully created.' }
+        format.html { redirect_to campaign_user_path(@campaign), notice: 'Campaign was successfully created.' }
         format.json { render json: @campaign, status: :created, location: @campaign }
       else
         format.html { render action: "new" }
@@ -82,4 +82,20 @@ class CampaignsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def user
+      @camp = Campaign.find(params[:campaign_id])
+      @user = User.all
+  end
+
+  def update_user
+    @campaign = Campaign.find(params[:campaign_id])
+    @user = User.find(params[:user])
+    @user.campaigns << @campaign
+    respond_to do |format|
+      format.html { redirect_to @campaign }
+      format.json { head :no_content }
+    end
+  end
+
 end
