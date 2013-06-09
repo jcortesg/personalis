@@ -19,12 +19,19 @@
     <%= f.label :raking %><br />
     <%= f.text_field :raking %>
   </div>
-  <div class="field">
+  <fieldset>
+
+    <div class="field">
     <%= f.fields_for :subcategories do |build|%>
       <%= build.label :name %>
-      <%= build.text_field :name  %>
+      <%= build.text_field :name  %> <br>
+      <%= build.label :raking %>
+      <%= build.text_field :raking %>
     <% end -%>
   </div>
+
+  </fieldset>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

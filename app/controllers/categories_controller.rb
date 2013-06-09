@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
     @category = Category.new
 
     5.times { @category.subcategories.build }
- 
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @category }
