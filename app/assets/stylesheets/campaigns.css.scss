@@ -1,3 +1,18 @@
 // Place all the styles related to the campaigns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#contForm{
+  border-top: 5px solid rgb(0, 158,226);
+}
+input{
+  width: 100%;
+}
+textarea{
+  width: 100%;
+}
+.btn-custom-form{
+  background: rgb(232,78,27);
+  color: #fff;
+  font-weight: 200;
+  padding: 8px 50px;
+}

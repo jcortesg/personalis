@@ -1,25 +1,35 @@
-<h1>Listing campaigns</h1>
+<div id="contForm">
+  <div class="container">
+    <h1>Campañas</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nombre de la campaña</th>
+          <th>Categoria</th>
+          <th>Tweet</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
 
-<% @campaigns.each do |campaign| %>
-  <tr>
-    <td><%= campaign.name %></td>
-    <td><%= campaign.description %></td>
-    <td><%= link_to 'Show', campaign %></td>
-    <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
-    <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <% @campaigns.each do |campaign| %>
+        <tr>
+          <td><%= campaign.name %></td>
+          <td><%= campaign.description %></td>
+          <td>Cat</td>
+          <td><%= link_to 'Show', campaign %></td>
+          <td><%= link_to 'Edit', edit_campaign_path(campaign) %></td>
+          <td><%= link_to 'Destroy', campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
 
-<br />
+    <br />
 
-<%= link_to 'New Campaign', new_campaign_path %>
+    <%= link_to 'Crear campaña', new_campaign_path, :class => "btn btn-large btn-custom-form" %>
+  </div>
+</div>
