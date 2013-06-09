@@ -15,6 +15,22 @@ class UsersController < ApplicationController
   
   def profile
     @user = current_user
+    category = Category.all
+    array = []
+    rankin = []
+    category.each do |cat|
+      array << cat.name
+      rankin << cat.raking
+      case cat.name
+      when 'musica'
+      when 'deportes'
+      when 'tecnologia'
+      when 'desarrollo'
+      when 'ciencia'
+      end
+    end
+    @category = array
+    @rankin = rankin
   end
 
   def metrics

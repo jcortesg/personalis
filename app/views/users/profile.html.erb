@@ -14,7 +14,7 @@
         },
         
         title: {
-            text: 'Budget vs spending',
+            text: 'Ranking de categorias',
             x: -80
         },
         
@@ -23,8 +23,8 @@
         },
         
         xAxis: {
-            categories: ['Sales', 'Marketing', 'Development', 'Customer Support', 
-                    'Information Technology', 'Administration'],
+            categories: ['<%=@category[0]%>', '<%=@category[1]%>', '<%=@category[2]%>', '<%=@category[3]%>', 
+                    '<%=@category[4]%>', '<%=@category[5]%>'],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -37,7 +37,7 @@
         
         tooltip: {
             shared: true,
-            pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
         },
         
         legend: {
@@ -48,12 +48,8 @@
         },
         
         series: [{
-            name: 'Allocated Budget',
-            data: [43000, 19000, 60000, 35000, 17000, 10000],
-            pointPlacement: 'on'
-        }, {
-            name: 'Actual Spending',
-            data: [50000, 39000, 42000, 31000, 26000, 14000],
+            name: '@<%= current_user.username %>',
+            data: ['<%=@rankin[0]%>', '<%=@rankin[1]%>', '<%=@rankin[2]%>', '<%=@rankin[3]%>','<%=@rankin[4]%>', '<%=@rankin[5]%>'],
             pointPlacement: 'on'
         }]
     
@@ -125,6 +121,7 @@
     
 
 </script>
+
 <div class="contAzul">
   <div class="container">
     <div class="span12">
